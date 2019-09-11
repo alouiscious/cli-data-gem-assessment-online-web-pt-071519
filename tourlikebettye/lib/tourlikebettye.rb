@@ -1,6 +1,6 @@
 require "tourlikebettye/version"
 
-module Tourlikebettye
+module TourLikeBettye
   class Error < StandardError; end
   # Your code goes here...
 end

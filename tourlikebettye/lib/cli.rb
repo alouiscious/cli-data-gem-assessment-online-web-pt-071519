@@ -1,20 +1,25 @@
-module ShowList
-    class class 
+module BettyToursList
+    class BettyeTours 
         
         def start
 
-            puts "Hey welcome to my new BLANK program"
+            puts "Hey welcome to the Tour Like Bettye app!\n
+            This program is here to help music performances tour like a pro."
             @input = nil
             menu
             while @input != "exit" && @input != "quit"
                 get_input(
-                    valid_choice: ["1", "2", )
+                    valid_choice: ["1", "2", "3", "4")
                 if @input == "menu"
                     menu
                 elsif @input == "1"
-                    puts "Prints list of shows"
+                    puts "Blues Touring"
                 elsif @input == "2"
-                    puts "Prints list of Networks"
+                    puts "Jazz Touring"
+                elsif @input == "3"
+                    puts "Alt RB/Soul Touring"
+                elsif @input == "4"
+                    puts "Pop/Rock Touring"
                 elsif @input == "exit" || @input == "quit"
                 else
                     puts "whoops try again"
@@ -24,9 +29,11 @@ module ShowList
 
         def menu 
             puts <<-MENU
-            1. List Shows
-            2. List Networks
-            or type "exit" or "quit" at any time to leave the program.
+            1. Blues Touring
+            2. Jazz Touring
+            3. Alt RB/Soul Touring
+            4. Pop/Rock Touring
+            or type "exit" or "quit" at any time to leave the app.
             MENU
         end
         
@@ -37,9 +44,9 @@ module ShowList
             @input
 
         end
-        def print_shows
-            Show.all.each.with_index(1) do |show|
-                puts "#{index}. #{show.name}"
+        def print_venues
+            BettyeVenues.all.each.with_index(1) do |betvenues|
+                puts "#{index}. #{betvenues.name}"
             end
             prompt_for_show_choice
         end
@@ -47,9 +54,9 @@ module ShowList
         def prompt_for_show_choice
             @input = get.chomp
             # make sure that it's valid input
-            @index = @input.to_i -1
+            @index = @input.to_i -1 # This is the last item in the array/hash
 
-            puts Show.all[@input.to_i - 1].summary
+            puts BettyeVenues.all[@input.to_i - 1].summary
         end
     end
 end

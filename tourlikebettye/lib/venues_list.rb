@@ -11,7 +11,7 @@ require 'open-uri'
     bettyes_venues = []
     bettye_noko = Nokogiri::HTML(open("http://www.bettyelavette.com/tour"))
     jambase_noko = Nokogiri::HTML(open("https://www.jambase.com/band/bettye-lavette"))
-
+binding.pry
      bettyes_venues = bettye_noko.css('div.artists--bettye-lavette')
     #  bettyes_venues << jambase_noko.css('.jbshow jbevent')
      p bettyes_venues

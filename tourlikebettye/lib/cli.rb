@@ -1,4 +1,4 @@
-module BettyToursList
+module Bettytourslist
     class BettyeTours 
         
         def start

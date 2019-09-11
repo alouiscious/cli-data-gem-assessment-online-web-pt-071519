@@ -7,5 +7,7 @@ RSpec.describe Tourlikebettye do
     expect(false).to eq(true)
   end
 
-  
+  it "has a cli.rd in its lib folder" do
+    expect(Bettytourslist::BettyeTours(cli.rd)).to eql? true
+  end
 end
